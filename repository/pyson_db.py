@@ -17,7 +17,8 @@ class PysondbRepository(BaseRepository):
 
 
     def add_many_products(self, products: List[Dict]):
-        self.db.addMany(products)
+        if len(products) > 0:
+            self.db.addMany(products)
 
 
     def get_products_size(self) -> float:

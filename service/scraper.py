@@ -21,7 +21,7 @@ class ScraperService:
         for product in products:
             if product['product_title'] and self.repository.get_product_price(product['product_title']) != product['product_price']:
                 entries.append(product)
-
+        
         self.repository.add_many_products(entries)
         msg = str(self.repository.get_products_size()) + " products present in this DB session"
         self.notification_service.send_notification(msg)
