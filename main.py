@@ -1,11 +1,9 @@
-from typing import Union
 from fastapi import FastAPI
-from strategy.db_strategy import PysonDBStrategy
+from api.scraper import scrape_router
 
 app = FastAPI()
 
-db_strategy = PysonDBStrategy()
-db_strategy.setup()
+app.include_router(scrape_router, prefix="/scrape", tags=["scrape"])
 
 
 @app.get("/")
