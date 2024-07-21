@@ -13,10 +13,11 @@ class ScraperService:
         self.repository = repository
         self.notification_service = NotificationService(ConsoleNotification())
 
-    def scrape_and_store(self, url: str, page_limit: int) -> List[Dict]:
+    def scrape_and_store(self, url: str, page_limit: int) -> str:
         products = scrape_products(url, page_limit)
         for product in products:
             if product['product_title'] and self.repository.get_product_price(product['product_title']) != product['product_price']:
                 self.repository.add_product(product)
-        self.notification_service.send_notification(str(self.repository.get_products_size()) + " products present in this DB session")
-        return products
+        msg = str(self.repository.get_products_size()) + " products present in this DB session"
+        self.notification_service.send_notification(msg)
+        return msg

@@ -15,7 +15,8 @@ Presenting you, the AtlysScraper in all it's glory! It's a fun tool which scrape
 1. A retry mechanism (3 times) has been provided with wait time of 2s between each
 2. After the scraping is done, the number of products in DB is output through a notification service (`Strategy design pattern`)
 3. This project can support a variety of databases with minimal code change due to the use of `repository design pattern`
-4. Abstractions and OOPs principles have been followed wherever possible to make the codebase modular and extensible
-5. Type validations have been done through `pydantic` library
+4. `ThreadExecutorPool` has been used for multi-threading to boost the scraping speed 
+5. Abstractions and OOPs principles have been followed wherever possible to make the codebase modular and extensible
+6. Type validations have been done through `pydantic` library
 
 ## PS: Please delete the `db.json` file manually if you restart the server
