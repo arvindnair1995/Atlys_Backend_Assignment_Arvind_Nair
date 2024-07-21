@@ -16,13 +16,14 @@ class PysondbRepository(BaseRepository):
         self.db.add(product)
 
 
-    def get_products_size(self) -> int:
+    def get_products_size(self) -> float:
         return len(self.db.getAll())
     
 
-    def is_product_present_in_DB(self, title) -> bool:
-        if len(self.db.getBy({"product_title": title})):
-            return True
+    def get_product_price(self, title: str) -> float:
+        product = self.db.getBy({"product_title": title})
+        if len(product) == 1:
+            return product[0]['product_price']
         else:
-            return False
+            return -1
 

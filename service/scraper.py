@@ -13,7 +13,7 @@ class ScraperService:
     def scrape_and_store(self, url: str, page_limit: int) -> List[Dict]:
         products = scrape_products(url, page_limit)
         for product in products:
-            if not self.repository.is_product_present_in_DB(product['product_title']):
+            if product['product_title'] and self.repository.get_product_price(product['product_title']) != product['product_price']:
                 self.repository.add_product(product)
-        print(str(self.repository.get_products_size()) + " products were scraped and updated in this DB session")
+        print(str(self.repository.get_products_size()) + " products were scraped in this DB session")
         return products

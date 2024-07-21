@@ -12,5 +12,5 @@ class BaseRepository(ABC):
         pass
 
     @abstractmethod
-    def is_product_present_in_DB(self, title: str) -> bool:
+    def get_product_price(self, title: str) -> int:
         pass

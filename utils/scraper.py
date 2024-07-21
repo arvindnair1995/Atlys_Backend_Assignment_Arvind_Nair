@@ -32,7 +32,7 @@ def get_product_details(item) -> Dict:
     # Get price
     price_span = item.find('span', class_='woocommerce-Price-amount amount')
     if price_span:
-        price = price_span.text
+        price = price_span.get_text(strip=True).replace("₹", "").replace(",", "")
     # Get  title and thumbnail
     img_element = item.find('img')
     if img_element and 'data-lazy-src' in img_element.attrs:
@@ -48,7 +48,7 @@ def get_product_details(item) -> Dict:
         else:
             print(f"Failed to download image: {response.status_code}")
     
-    return {"product_title": title, "product_price": price, "path_to_image": img_path}
+    return {"product_title": title, "product_price": float(price), "path_to_image": img_path}
 
 
 def scrape_products_page(url: str) -> List[Dict]:
