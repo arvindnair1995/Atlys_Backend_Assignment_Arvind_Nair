@@ -25,8 +25,6 @@ Presenting you, the AtlysScraper in all it's glory! It's a fun tool which scrape
 
 ![Pic 2](https://github.com/user-attachments/assets/20256f0e-bd72-4065-a0e0-c7217f2b83fe)
 
-![Pic 3](https://github.com/user-attachments/assets/713d72a0-3426-4876-ba2e-5eac2f0020a4)
-
-![Pic 4](https://github.com/user-attachments/assets/600aad16-08f3-4f22-9b15-625c1f14db48)
+![Pic 3](https://github.com/user-attachments/assets/600aad16-08f3-4f22-9b15-625c1f14db48)
 
 ## PS: Please delete the `db.json` file and `images` folder manually if you restart the server
