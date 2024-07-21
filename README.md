@@ -19,4 +19,8 @@ Presenting you, the AtlysScraper in all it's glory! It's a fun tool which scrape
 5. Abstractions and OOPs principles have been followed wherever possible to make the codebase modular and extensible
 6. Type validations have been done through `pydantic` library
 
+## Screenshots
+
+
+
 ## PS: Please delete the `db.json` file and `images` folder manually if you restart the server
