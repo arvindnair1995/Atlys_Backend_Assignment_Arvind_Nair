@@ -17,3 +17,5 @@ Presenting you, the AtlysScraper in all it's glory! It's a fun tool which scrape
 3. This project can support a variety of databases with minimal code change due to the use of `repository design pattern`
 4. Abstractions and OOPs principles have been followed wherever possible to make the codebase modular and extensible
 5. Type validations have been done through `pydantic` library
+
+## PS: Please delete the `db.json` file manually if you restart the server

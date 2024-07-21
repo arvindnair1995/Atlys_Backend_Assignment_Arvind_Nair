@@ -13,7 +13,7 @@ class ScrapeRequest(BaseModel):
 @scrape_router.post("/", dependencies=[Depends(verify_token)])
 async def scrape_data(request: ScrapeRequest, scraper_service: ScraperService = Depends()):
     try:
-        if request.url != URL:
+        if request.url != HttpUrl(URL):
            raise HTTPException(status_code=500, detail="URL cannot be changed")
         result = scraper_service.scrape_and_store(request.url, request.page_limit)
         return {"message": "Scraping completed successfully", "data": result}
