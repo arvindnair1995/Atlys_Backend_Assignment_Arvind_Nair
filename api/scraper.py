@@ -6,6 +6,7 @@ from service.scraper import ScraperService
 
 scrape_router = APIRouter()
 
+
 class ScrapeRequest(BaseModel):
     url: HttpUrl = Field(default=URL)
     page_limit: int = Field(default=1, gt=0, lt=120, description="Number of pages should be gretaer than 0 and less than 120")

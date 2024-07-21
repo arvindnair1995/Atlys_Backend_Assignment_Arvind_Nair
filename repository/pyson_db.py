@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, List
 
 from pysondb import db
 
@@ -9,11 +9,15 @@ from repository.base import BaseRepository
 class PysondbRepository(BaseRepository):
 
     def __init__(self):
-        self.db = db.getDb(DATABASE)
+        self.db =  db.getDb(DATABASE)
 
 
     def add_product(self, product: Dict):
         self.db.add(product)
+
+
+    def add_many_products(self, products: List[Dict]):
+        self.db.addMany(products)
 
 
     def get_products_size(self) -> float:
